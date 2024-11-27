@@ -16,6 +16,6 @@ COPY . .
 
 # .env 파일을 컨테이너의 환경 변수로 설정
 # (이 단계는 직접적으로 환경 변수를 설정하지 않지만, 서버가 이 파일을 읽을 수 있도록 합니다)
-CMD ["node", "server.js"]
+CMD ["node", "src/server.js"]
 
-EXPOSE 3000
+EXPOSE 80
