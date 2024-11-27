@@ -48,7 +48,7 @@ jobs:
       - name: AWS Role을 이용한 로그인
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::381492314104:role/expressjsrole # 역할을 Express 관련 역할로 변경
+          role-to-assume: arn:aws:iam::381492314104:role/expressjsrole
           role-session-name: expressjsSession
           aws-region: ${{ env.AWS_REGION }}
 
@@ -66,13 +66,13 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-          - name: Print DB Secrets (Debugging Only)
-          run: |
-            echo "DB_HOST: ${{ secrets.DB_HOST }}"
-            echo "DB_USER: ${{ secrets.DB_USER }}"
-            echo "DB_PASSWORD: ${{ secrets.DB_PASSWORD }}"
-            echo "DB_NAME: ${{ secrets.DB_NAME }}"
-            echo "DB_PORT: ${{ secrets.DB_PORT }}"
+      - name: Print DB Secrets (Debugging Only)
+        run: |
+          echo "DB_HOST: ${{ secrets.DB_HOST }}"
+          echo "DB_USER: ${{ secrets.DB_USER }}"
+          echo "DB_PASSWORD: ${{ secrets.DB_PASSWORD }}"
+          echo "DB_NAME: ${{ secrets.DB_NAME }}"
+          echo "DB_PORT: ${{ secrets.DB_PORT }}"
 
       - name: Fill in the new image ID in the Amazon ECS Task Definition
         id: task-def
