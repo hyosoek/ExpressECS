@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  ECR_REPOSITORY: expressjs
+  ECR_REPOSITORY: expressjsecs
   AWS_REGION: ap-northeast-2
   ECS_CLUSTER: expressjsCluster
   ECS_SERVICE: expressjsServices
