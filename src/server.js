@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
   // user 테이블의 모든 데이터 가져오기
   connection.query("SELECT * FROM user", (err, results) => {
     if (err) {
-      console.error("Error fetching data + test: " + err.stack);
-      return res.status(500).send("Error fetching data");
+      console.error("Error fetching data: " + err.stack);
+      return res.status(500).send("Error fetching data + test error?");
     }
     res.json(results); // JSON 형식으로 응답
   });
