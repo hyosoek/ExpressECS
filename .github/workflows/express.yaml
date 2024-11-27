@@ -11,12 +11,17 @@ permissions:
   contents: read
 
 env:
-  ECR_REPOSITORY: expressjsecs
+  ECR_REPOSITORY: expressjs
   AWS_REGION: ap-northeast-2
   ECS_CLUSTER: expressjsCluster
   ECS_SERVICE: expressjsServices
   CONTAINER_NAME: expressjsContainer
   ECS_TASK_DEFINITION: ./task-definition.json
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_USER: ${{ secrets.DB_USER }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_PORT: ${{ secrets.DB_PORT }}
 
 jobs:
   build:
