@@ -2,11 +2,11 @@
   "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:381492314104:task-definition/expressjsTask:1",
   "containerDefinitions": [
     {
-      "name": "expressContainer",
+      "name": "expressjsContainer",
       "cpu": 0,
       "portMappings": [
         {
-          "name": "expresscontainer-80-tcp",
+          "name": "expressjscontainer-80-tcp",
           "containerPort": 80,
           "hostPort": 80,
           "protocol": "tcp",
