@@ -14,28 +14,6 @@
         }
       ],
       "essential": true,
-      "environment": [
-        {
-          "name": "DB_NAME",
-          "value": "practice"
-        },
-        {
-          "name": "DB_HOST",
-          "value": "3.36.132.32"
-        },
-        {
-          "name": "DB_PORT",
-          "value": "3306"
-        },
-        {
-          "name": "DB_USER",
-          "value": "root"
-        },
-        {
-          "name": "DB_PASSWORD",
-          "value": "1234"
-        }
-      ],
       "environmentFiles": [],
       "mountPoints": [],
       "volumesFrom": [],
