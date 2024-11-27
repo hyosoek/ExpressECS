@@ -31,7 +31,13 @@ app.get("/", (req, res) => {
   connection.query("SELECT * FROM user", (err, results) => {
     if (err) {
       console.error("Error fetching data: " + err.stack);
-      return res.status(500).send("Error fetching data + test error?");
+      return res.status(500).send({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: Number(process.env.PORT) || 3306,
+      });
     }
     res.json(results); // JSON 형식으로 응답
   });
