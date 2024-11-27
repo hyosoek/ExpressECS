@@ -14,7 +14,7 @@ const connection = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: 3307,
+  port: Number(process.env.PORT) || 3306,
 });
 
 connection.connect((err) => {
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
   // user 테이블의 모든 데이터 가져오기
   connection.query("SELECT * FROM user", (err, results) => {
     if (err) {
-      console.error("Error fetching data  + test message : " + err.stack);
+      console.error("Error fetching data + test: " + err.stack);
       return res.status(500).send("Error fetching data");
     }
     res.json(results); // JSON 형식으로 응답
